@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  database:
+    image: mysql
+    container_name: MySQL
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: scprime@Mon2022!
+    networks:
+      scpm:
+    volumes:
+      - database_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  monitor:
+    depends_on:
+      database:
+        condition: service_healthy
+    image: addramyr/scp-monitor:latest
+    container_name: SCPrimeMonitor
+    restart: always
+    ports:
+      - 8016:80
+      - 1932:1932
+    networks:
+      scpm:
+
+networks:
+  scpm:
+    name: "SCPMonitorNetwork"
+    driver: bridge
+
+volumes:
+  database_data:
