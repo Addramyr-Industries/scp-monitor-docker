@@ -98,13 +98,13 @@ your account on the system.
 ## Compatability
 Below is a table of the current host (storage provider) compatability list.
 
-| Operating System | Status                                                                          | Plans        |
-|------------------|---------------------------------------------------------------------------------|--------------|
-| DIY Linux        | Fully Compatible                                                                |              |
-| DIY Windows      | Fully Compatible                                                                |              |
-| DIY Docker       | Can use the linux option if the container is running on same network (untested) | Coming Soon  |
-| DIY Apple        | No support officially, this is due to lack of interest on the network           | Coming Later |
-| XA Miner         | Currently no way of communicating with the hosts API                            | Coming Soon  |
+| Operating System | Status                                                                          | Plans       |
+|------------------|---------------------------------------------------------------------------------|-------------|
+| DIY Linux        | Fully Compatible                                                                |             |
+| DIY Windows      | Fully Compatible                                                                |             |
+| DIY Docker       | Can use the linux option if the container is running on same network (untested) | Coming Soon |
+| DIY Apple        | Lightly tested using SSH                                                        |             |
+| XA Miner         | Currently no way of communicating with the hosts API                            | Coming Soon |
 
 ## Known Issues
 - Currently, there is no support for any other SSH authentication except password. This will be 
